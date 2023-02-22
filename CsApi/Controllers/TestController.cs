@@ -1,4 +1,5 @@
-﻿using CsApi.Entity;
+﻿using CsApi.DAO;
+using CsApi.Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
@@ -28,6 +29,8 @@ namespace CsApi.Controllers
             }
             else
             {
+                DAOimpl dao = new DAOimpl();
+                dao.GetConnect();
                 Account account = new Account();
                 account.Aaccount = "55688";
                 return JsonSerializer.Serialize(account);

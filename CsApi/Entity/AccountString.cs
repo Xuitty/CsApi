@@ -2,12 +2,12 @@
 
 namespace CsApi.Entity
 {
-    public class Account
+    public class AccountString
     {
         public int? Aid { get; set; }
         public int? Atype { get; set; } = 1;
         public string? Aaccount { get; set; }
-        public Decimal? Abalance { get; set; }
+        public string? Abalance { get; set; }
         public int? Aactive { get; set; }
         public string? Averify { get; set; }
         public string? Anickname { get; set; }
@@ -15,9 +15,9 @@ namespace CsApi.Entity
         public int? Statuss { get; set; }
         public string? Message { get; set; }
 
-        public override string ToString()
-        {
+        public override string ToString() {
             return JsonSerializer.Serialize(this);
         }
+        
     }
 }
